@@ -235,12 +235,7 @@ export default function Index() {
             <p className="leading-relaxed text-base md:text-lg font-light mb-8" style={{ color: "#7A6060" }}>
               Мы создаём пространство, где мусульманки смогут провести Курбан-байрам в атмосфере сестринства, красоты и халяльного отдыха. Это не массовая вечеринка, а тёплый закрытый вечер для своих.
             </p>
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl" style={{ background: "rgba(212,175,100,0.08)", border: "1px solid rgba(212,175,100,0.2)" }}>
-              <span className="text-xl">🏡</span>
-              <p className="text-sm font-light" style={{ color: "#7A6060" }}>
-                Красивый двухэтажный дом за городом
-              </p>
-            </div>
+
           </RevealBlock>
         </div>
       </section>
