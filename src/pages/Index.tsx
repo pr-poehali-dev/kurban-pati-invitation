@@ -498,16 +498,49 @@ export default function Index() {
 
           {submitted ? (
             <RevealBlock>
-              <div className="text-center py-16 px-8 rounded-3xl" style={{ background: "white", border: "1px solid rgba(212,175,100,0.2)" }}>
-                <div className="text-5xl mb-6">🤍</div>
-                <h3 className="font-light mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "26px", color: "#3D2E2E" }}>
-                  Заявка принята!
-                </h3>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: "#7A6060" }}>
-                  После подтверждения участия тебе будет отправлено бумажное приглашение 🤍
-                </p>
-                <p className="text-sm font-light italic" style={{ color: "#9E8080" }}>
-                  Будем счастливы разделить этот вечер вместе ✨
+              <div className="py-10 px-8 rounded-3xl" style={{ background: "white", border: "1px solid rgba(212,175,100,0.2)" }}>
+                <div className="text-center mb-8">
+                  <div className="text-5xl mb-4">🤍</div>
+                  <h3 className="font-light mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "26px", color: "#3D2E2E" }}>
+                    Заявка принята!
+                  </h3>
+                  <p className="text-sm font-light" style={{ color: "#7A6060" }}>
+                    Осталось оплатить участие — место будет забронировано после оплаты
+                  </p>
+                </div>
+
+                <div className="rounded-2xl p-6 mb-6" style={{ background: "#FBF7F4", border: "1px solid rgba(212,175,100,0.2)" }}>
+                  <p className="text-xs uppercase tracking-widest mb-4 text-center" style={{ color: "#9E8080" }}>Реквизиты для оплаты</p>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-sm font-light" style={{ color: "#7A6060" }}>Банк</span>
+                      <span className="text-sm font-medium" style={{ color: "#3D2E2E" }}>Т-Банк</span>
+                    </div>
+                    <div className="h-px" style={{ background: "rgba(212,175,100,0.15)" }} />
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-sm font-light" style={{ color: "#7A6060" }}>Номер телефона</span>
+                      <span className="text-sm font-medium tracking-wide" style={{ color: "#3D2E2E", fontFamily: "'Cormorant Garamond', serif", fontSize: "18px" }}>
+                        +7 909 715-52-94
+                      </span>
+                    </div>
+                    <div className="h-px" style={{ background: "rgba(212,175,100,0.15)" }} />
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-sm font-light" style={{ color: "#7A6060" }}>Сумма</span>
+                      <span className="font-light" style={{ color: "#D4AF64", fontFamily: "'Cormorant Garamond', serif", fontSize: "22px" }}>
+                        {formData.format === "night" ? "2 500 ₽" : "1 500 ₽"}
+                      </span>
+                    </div>
+                    <div className="h-px" style={{ background: "rgba(212,175,100,0.15)" }} />
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-sm font-light" style={{ color: "#7A6060" }}>Комментарий</span>
+                      <span className="text-sm font-medium" style={{ color: "#3D2E2E" }}>Курбан Пати, {formData.name}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-xs text-center leading-relaxed" style={{ color: "#9E8080" }}>
+                  После оплаты напиши нам — и мы подтвердим участие 🤍<br/>
+                  Бумажное приглашение будет отправлено после подтверждения ✨
                 </p>
               </div>
             </RevealBlock>
