@@ -175,7 +175,7 @@ export default function Index() {
 
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           <div className="mb-4" style={{ animation: "kpFadeDown 1s ease both" }}>
-            <span className="text-xs uppercase tracking-[0.4em] text-[#D4AF64]/90">Закрытый халяльный вечер</span>
+            <span className="text-xs uppercase tracking-[0.4em] text-[#D4AF64]/90">Закрытый халяльный вечер · Курбан-байрам 2026</span>
           </div>
 
           <h1
@@ -185,17 +185,23 @@ export default function Index() {
             Курбан
           </h1>
           <h1
-            className="font-light leading-none mb-8"
+            className="font-light leading-none mb-6"
             style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(72px,12vw,120px)", color: "#D4AF64", animation: "kpFadeUp 1s ease 0.35s both" }}
           >
             Пати
           </h1>
 
           <p
-            className="text-white/80 text-sm md:text-base font-light mb-10 tracking-wide"
-            style={{ animation: "kpFadeUp 1s ease 0.5s both" }}
+            className="text-white/85 text-sm md:text-base font-light mb-2 tracking-wide"
+            style={{ animation: "kpFadeUp 1s ease 0.45s both" }}
           >
             для девушек-мусульманок
+          </p>
+          <p
+            className="text-white/65 text-xs md:text-sm font-light mb-10 leading-relaxed max-w-md mx-auto"
+            style={{ animation: "kpFadeUp 1s ease 0.5s both" }}
+          >
+            С любовью приглашаем тебя на закрытый халяльный вечер, посвящённый празднику Курбан-байрам ✨
           </p>
 
           <div style={{ animation: "kpFadeUp 1s ease 0.65s both" }}>
@@ -210,7 +216,7 @@ export default function Index() {
             >
               Подать заявку
             </a>
-            <p className="text-white/50 text-xs tracking-widest uppercase">Количество мест ограничено</p>
+            <p className="text-white/50 text-xs tracking-widest uppercase">Количество мест ограничено 🤍</p>
           </div>
         </div>
 
@@ -227,31 +233,71 @@ export default function Index() {
             <h2 className="font-light mb-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)", color: "#3D2E2E" }}>
               О мероприятии
             </h2>
-            <p className="leading-relaxed text-base md:text-lg font-light" style={{ color: "#7A6060" }}>
+            <p className="leading-relaxed text-base md:text-lg font-light mb-8" style={{ color: "#7A6060" }}>
               Мы создаём пространство, где мусульманки смогут провести Курбан-байрам в атмосфере сестринства, красоты и халяльного отдыха. Это не массовая вечеринка, а тёплый закрытый вечер для своих.
             </p>
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl" style={{ background: "rgba(212,175,100,0.08)", border: "1px solid rgba(212,175,100,0.2)" }}>
+              <span className="text-xl">🏡</span>
+              <p className="text-sm font-light" style={{ color: "#7A6060" }}>
+                Красивый двухэтажный дом за городом
+              </p>
+            </div>
+          </RevealBlock>
+        </div>
+      </section>
+
+      {/* What awaits */}
+      <section className="py-16 px-4" style={{ background: "#FBF7F4" }}>
+        <div className="max-w-xl mx-auto">
+          <RevealBlock className="text-center mb-10">
+            <p className="text-[#D4AF64] text-xs tracking-[0.5em] uppercase mb-3">✦</p>
+            <h2 className="font-light" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(28px,4vw,40px)", color: "#3D2E2E" }}>
+              Тебя ждёт
+            </h2>
+          </RevealBlock>
+          <RevealBlock delay={100}>
+            <div className="space-y-3">
+              {[
+                "Тёплая атмосфера сестринства",
+                "Красивый двухэтажный дом за городом",
+                "Вечерние образы и праздничное настроение",
+                "Халяльный фуршет",
+                "Игры, конкурсы и интерактивы",
+                "Фотозона, фотограф и полароид",
+                "Хна, подарки и сюрпризы",
+                "Душевное общение и напоминание о смысле праздника",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-4 px-5 py-4 rounded-2xl" style={{ background: "white", border: "1px solid rgba(212,175,100,0.12)" }}>
+                  <span className="text-[#D4AF64] text-lg flex-shrink-0">🤍</span>
+                  <p className="text-sm font-light" style={{ color: "#3D2E2E" }}>{item}</p>
+                </div>
+              ))}
+            </div>
           </RevealBlock>
         </div>
       </section>
 
       {/* Info strip */}
-      <section className="py-10 px-4" style={{ background: "#F5EDE8" }}>
+      <section className="py-12 px-4" style={{ background: "#F5EDE8" }}>
         <div className="max-w-2xl mx-auto">
           <RevealBlock>
             <div className="flex flex-col md:flex-row justify-center gap-8 items-center text-center">
               <div>
                 <span className="text-2xl mb-2 block">📍</span>
-                <p className="text-sm" style={{ color: "#3D2E2E" }}>с. Юськи, ул. Октябрьская, 50</p>
+                <p className="text-sm font-medium" style={{ color: "#3D2E2E" }}>с. Юськи</p>
+                <p className="text-xs mt-0.5" style={{ color: "#7A6060" }}>ул. Октябрьская, 50</p>
               </div>
               <div className="hidden md:block w-px h-10 opacity-30" style={{ background: "#D4AF64" }} />
               <div>
                 <span className="text-2xl mb-2 block">📅</span>
-                <p className="text-sm" style={{ color: "#3D2E2E" }}>31 мая 2026</p>
+                <p className="text-sm font-medium" style={{ color: "#3D2E2E" }}>31 мая 2026</p>
+                <p className="text-xs mt-0.5" style={{ color: "#7A6060" }}>Курбан-байрам</p>
               </div>
               <div className="hidden md:block w-px h-10 opacity-30" style={{ background: "#D4AF64" }} />
               <div>
                 <span className="text-2xl mb-2 block">🕔</span>
-                <p className="text-sm" style={{ color: "#3D2E2E" }}>Заезд в 17:00</p>
+                <p className="text-sm font-medium" style={{ color: "#3D2E2E" }}>Заезд в 17:00</p>
+                <p className="text-xs mt-0.5" style={{ color: "#7A6060" }}>Мест ограничено 🤍</p>
               </div>
             </div>
           </RevealBlock>
@@ -263,9 +309,10 @@ export default function Index() {
         <div className="max-w-4xl mx-auto">
           <RevealBlock className="text-center mb-16">
             <p className="text-[#D4AF64] text-xs tracking-[0.5em] uppercase mb-4">✦</p>
-            <h2 className="font-light" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)", color: "#3D2E2E" }}>
+            <h2 className="font-light mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)", color: "#3D2E2E" }}>
               Программа вечера
             </h2>
+            <p className="text-sm font-light" style={{ color: "#9E8080" }}>Всё это тебя ждёт с 17:00 до 22:00</p>
           </RevealBlock>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -295,7 +342,10 @@ export default function Index() {
             <h2 className="text-white font-light mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)" }}>
               Ночная программа
             </h2>
-            <p className="text-white/40 text-xs uppercase tracking-widest">только для гостей с ночёвкой</p>
+            <p className="text-white/40 text-xs uppercase tracking-widest mb-4">только для гостей с ночёвкой · до 1 июня 11:00</p>
+            <p className="text-white/60 text-sm font-light max-w-md mx-auto">
+              Размещение в комфортных двухместных комнатах
+            </p>
           </RevealBlock>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -319,14 +369,17 @@ export default function Index() {
         <div className="max-w-2xl mx-auto text-center">
           <RevealBlock>
             <p className="text-[#D4AF64] text-xs tracking-[0.5em] uppercase mb-4">✦</p>
-            <h2 className="font-light mb-10" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)", color: "#3D2E2E" }}>
+            <h2 className="font-light mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)", color: "#3D2E2E" }}>
               Дресс-код
             </h2>
+            <p className="text-sm font-light mb-10" style={{ color: "#7A6060" }}>
+              🎀 Вечерние платья и праздничные причёски
+            </p>
             <div className="flex flex-col md:flex-row gap-5 justify-center items-stretch">
               {[
                 { emoji: "👗", text: "Вечерние платья" },
                 { emoji: "💇‍♀️", text: "Праздничные причёски" },
-                { emoji: "🚫👨", text: "Без мужчин" },
+                { emoji: "🌸", text: "Только женское мероприятие — без присутствия мужчин" },
               ].map((item) => (
                 <div
                   key={item.text}
@@ -334,7 +387,7 @@ export default function Index() {
                   style={{ background: "white", border: "1px solid rgba(212,175,100,0.15)" }}
                 >
                   <span className="text-3xl mb-3 block">{item.emoji}</span>
-                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "18px", color: "#3D2E2E" }}>{item.text}</p>
+                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "17px", color: "#3D2E2E" }}>{item.text}</p>
                 </div>
               ))}
             </div>
@@ -414,8 +467,11 @@ export default function Index() {
                 <h3 className="font-light mb-4" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "26px", color: "#3D2E2E" }}>
                   Заявка принята!
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#7A6060" }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: "#7A6060" }}>
                   После подтверждения участия тебе будет отправлено бумажное приглашение 🤍
+                </p>
+                <p className="text-sm font-light italic" style={{ color: "#9E8080" }}>
+                  Будем счастливы разделить этот вечер вместе ✨
                 </p>
               </div>
             </RevealBlock>
@@ -505,12 +561,18 @@ export default function Index() {
       {/* Footer */}
       <footer className="py-16 px-4 text-center relative overflow-hidden" style={{ background: "#1C1010" }}>
         <div className="absolute inset-0" style={{ background: "radial-gradient(circle at 50% 50%, rgba(212,175,100,0.12) 0%, transparent 70%)" }} />
+        <FloatingParticles dark />
         <div className="relative z-10 max-w-xl mx-auto">
-          <p className="font-light italic leading-relaxed mb-8" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D4AF64", fontSize: "clamp(18px,3vw,22px)" }}>
+          <p className="text-[#D4AF64] text-xs tracking-[0.5em] uppercase mb-6">✦ ✦ ✦</p>
+          <p className="font-light italic leading-relaxed mb-6" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D4AF64", fontSize: "clamp(18px,3vw,22px)" }}>
             «Это закрытый вечер, о котором не будет массовых объявлений. Если у тебя есть подруга, которой близка такая атмосфера — ты можешь передать приглашение ей ✨»
           </p>
+          <p className="text-white/40 text-sm font-light mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            Будем счастливы разделить этот вечер вместе 🤍
+          </p>
+          <div className="w-16 h-px mx-auto mb-6" style={{ background: "rgba(212,175,100,0.3)" }} />
           <p className="text-[#D4AF64]/40 text-xs tracking-widest uppercase" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            Курбан Пати · 2026
+            Курбан Пати · 31 мая 2026
           </p>
         </div>
       </footer>
