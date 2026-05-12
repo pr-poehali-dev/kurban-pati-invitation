@@ -152,7 +152,8 @@ export default function Index() {
     age: "",
     contact: "",
     format: "",
-    roommate: "",
+    address: "",
+    transfer: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -569,7 +570,7 @@ export default function Index() {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-widest mb-2" style={{ color: "#9E8080" }}>С кем хочешь жить в комнате?</label>
+                  <label className="block text-xs uppercase tracking-widest mb-2" style={{ color: "#9E8080" }}>Почтовый адрес для приглашения</label>
                   <input
                     className="w-full px-5 py-4 rounded-2xl outline-none transition-all duration-200 text-sm"
                     style={{
@@ -581,10 +582,33 @@ export default function Index() {
                     onFocus={(e) => (e.target.style.border = "1px solid #D4AF64")}
                     onBlur={(e) => (e.target.style.border = "1px solid rgba(212,175,100,0.2)")}
                     type="text"
-                    placeholder="Имя подруги или «не важно»"
-                    value={formData.roommate}
-                    onChange={(e) => setFormData({ ...formData, roommate: e.target.value })}
+                    placeholder="Город, улица, дом, квартира, индекс"
+                    value={formData.address}
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    required
                   />
+                </div>
+
+                <div>
+                  <label className="block text-xs uppercase tracking-widest mb-2" style={{ color: "#9E8080" }}>Нужен ли трансфер от Соборной мечети?</label>
+                  <div className="flex gap-3">
+                    {["Да, нужен", "Нет, доберусь сама"].map((opt) => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, transfer: opt })}
+                        className="flex-1 py-4 rounded-2xl text-sm font-light transition-all duration-200"
+                        style={{
+                          background: formData.transfer === opt ? "#D4AF64" : "white",
+                          color: formData.transfer === opt ? "white" : "#3D2E2E",
+                          border: formData.transfer === opt ? "1px solid #D4AF64" : "1px solid rgba(212,175,100,0.2)",
+                          fontFamily: "'Montserrat', sans-serif",
+                        }}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 <button
