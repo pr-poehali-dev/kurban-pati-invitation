@@ -201,9 +201,7 @@ export default function Index() {
           <p
             className="text-white/65 text-xs md:text-sm font-light mb-10 leading-relaxed max-w-md mx-auto"
             style={{ animation: "kpFadeUp 1s ease 0.5s both" }}
-          >
-            С любовью приглашаем тебя на закрытый халяльный вечер, посвящённый празднику Курбан-байрам ✨
-          </p>
+          >Мы ждем именно тебя ✨</p>
 
           <div style={{ animation: "kpFadeUp 1s ease 0.65s both" }}>
             <Countdown />
