@@ -304,63 +304,99 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Program */}
+      {/* Schedule */}
       <section className="py-24 px-4" style={{ background: "#FBF7F4" }}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <RevealBlock className="text-center mb-16">
             <p className="text-[#D4AF64] text-xs tracking-[0.5em] uppercase mb-4">✦</p>
-            <h2 className="font-light mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)", color: "#3D2E2E" }}>
-              Программа вечера
+            <h2 className="font-light" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)", color: "#3D2E2E" }}>
+              Программа
             </h2>
-            <p className="text-sm font-light" style={{ color: "#9E8080" }}>Всё это тебя ждёт с 17:00 до 22:00</p>
           </RevealBlock>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {activities.map((a, i) => (
-              <RevealBlock key={a.title} delay={i * 60}>
-                <div
-                  className="p-6 rounded-3xl text-center cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  style={{ background: "white", border: "1px solid rgba(212,175,100,0.15)" }}
-                >
-                  <span className="text-3xl mb-3 block">{a.emoji}</span>
-                  <h3 className="font-semibold mb-1" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "18px", color: "#3D2E2E" }}>{a.title}</h3>
-                  <p className="text-xs font-light" style={{ color: "#9E8080" }}>{a.desc}</p>
+          {/* Day 1 */}
+          <RevealBlock className="mb-10">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px flex-1" style={{ background: "rgba(212,175,100,0.3)" }} />
+              <span className="text-xs uppercase tracking-[0.3em] px-4 py-2 rounded-full" style={{ color: "#D4AF64", background: "rgba(212,175,100,0.08)", border: "1px solid rgba(212,175,100,0.2)" }}>
+                31 мая
+              </span>
+              <div className="h-px flex-1" style={{ background: "rgba(212,175,100,0.3)" }} />
+            </div>
+            <div className="space-y-0">
+              {[
+                { time: "17:00", label: "Заезд, знакомство с локацией", night: false },
+                { time: "18:00", label: "Открытие", night: false },
+                { time: "19:00", label: "Выступления спикеров, работа интерактивных зон", night: false },
+                { time: "20:00", label: "Аукцион, объявление королевы вечера", night: false },
+                { time: "до 22:00", label: "Выезд участниц без ночёвки", night: false, dimmed: true },
+                { time: "23:00", label: "Сосиски у мангала, бенгальские огни", night: true },
+                { time: "24:00", label: "Баня, душевные разговоры", night: true },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-4 items-stretch">
+                  <div className="flex flex-col items-center" style={{ minWidth: "70px" }}>
+                    <div
+                      className="w-2 h-2 rounded-full flex-shrink-0 mt-5"
+                      style={{ background: item.night ? "#D4AF64" : (item.dimmed ? "#C8B8B8" : "#D4AF64"), opacity: item.dimmed ? 0.4 : 1 }}
+                    />
+                    {i < 6 && <div className="w-px flex-1 mt-1" style={{ background: "rgba(212,175,100,0.2)" }} />}
+                  </div>
+                  <div className="pb-5 flex-1">
+                    <div className="flex items-baseline gap-3 flex-wrap">
+                      <span
+                        className="font-light flex-shrink-0"
+                        style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "20px", color: item.dimmed ? "#C8B8B8" : "#D4AF64", opacity: item.dimmed ? 0.6 : 1 }}
+                      >
+                        {item.time}
+                      </span>
+                      <span
+                        className="text-sm font-light"
+                        style={{ color: item.night ? "#3D2E2E" : (item.dimmed ? "#B0A0A0" : "#3D2E2E") }}
+                      >
+                        {item.label}
+                        {item.night && <span className="ml-2 text-xs px-2 py-0.5 rounded-full" style={{ background: "rgba(212,175,100,0.1)", color: "#D4AF64" }}>с ночёвкой</span>}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </RevealBlock>
-            ))}
-          </div>
-        </div>
-      </section>
+              ))}
+            </div>
+          </RevealBlock>
 
-      {/* Night program */}
-      <section className="py-24 px-4 relative overflow-hidden" style={{ background: "#1C1010" }}>
-        <div className="absolute inset-0" style={{ background: "radial-gradient(circle at 30% 50%, rgba(212,175,100,0.15) 0%, transparent 60%), radial-gradient(circle at 70% 50%, rgba(212,175,100,0.1) 0%, transparent 60%)" }} />
-        <FloatingParticles dark />
-        <div className="max-w-3xl mx-auto relative z-10">
-          <RevealBlock className="text-center mb-12">
-            <p className="text-[#D4AF64] text-xs tracking-[0.5em] uppercase mb-4">✦</p>
-            <h2 className="text-white font-light mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(32px,5vw,48px)" }}>
-              Ночная программа
-            </h2>
-            <p className="text-white/40 text-xs uppercase tracking-widest mb-4">только для гостей с ночёвкой · до 1 июня 11:00</p>
-            <p className="text-white/60 text-sm font-light max-w-md mx-auto">
-              Размещение в комфортных двухместных комнатах
+          {/* Day 2 */}
+          <RevealBlock>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px flex-1" style={{ background: "rgba(212,175,100,0.3)" }} />
+              <span className="text-xs uppercase tracking-[0.3em] px-4 py-2 rounded-full" style={{ color: "#D4AF64", background: "rgba(212,175,100,0.08)", border: "1px solid rgba(212,175,100,0.2)" }}>
+                1 июня
+              </span>
+              <div className="h-px flex-1" style={{ background: "rgba(212,175,100,0.3)" }} />
+            </div>
+            <div className="space-y-0">
+              {[
+                { time: "10:00", label: "Завтрак" },
+                { time: "11:00", label: "Выезд" },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-4 items-stretch">
+                  <div className="flex flex-col items-center" style={{ minWidth: "70px" }}>
+                    <div className="w-2 h-2 rounded-full flex-shrink-0 mt-5" style={{ background: "#D4AF64" }} />
+                    {i < 1 && <div className="w-px flex-1 mt-1" style={{ background: "rgba(212,175,100,0.2)" }} />}
+                  </div>
+                  <div className="pb-5 flex-1">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-light" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "20px", color: "#D4AF64" }}>
+                        {item.time}
+                      </span>
+                      <span className="text-sm font-light" style={{ color: "#3D2E2E" }}>{item.label}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-center mt-4" style={{ color: "#9E8080" }}>
+              * ночная программа — только для гостей с ночёвкой
             </p>
           </RevealBlock>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {nightActivities.map((a, i) => (
-              <RevealBlock key={a.title} delay={i * 80}>
-                <div
-                  className="p-6 rounded-3xl text-center transition-all duration-300 hover:-translate-y-1"
-                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(212,175,100,0.2)" }}
-                >
-                  <span className="text-3xl mb-2 block">{a.emoji}</span>
-                  <p className="text-white/90" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "18px" }}>{a.title}</p>
-                </div>
-              </RevealBlock>
-            ))}
-          </div>
         </div>
       </section>
 
